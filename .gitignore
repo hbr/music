@@ -1,0 +1,9 @@
+*.swp
+*.pdf
+*.mid
+*.midi
+*.wav
+*.mp3
+.DS_Store
+_build/
+gh-pages/
