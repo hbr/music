@@ -44,6 +44,18 @@ refrain = \lyricmode {
 }
 
 
+harmonies = \chordmode {
+    \partial 8 r8 |
+    f2 r4 |
+    c4 r8 d4:m c8:7 |
+    f4 r8 bf8 f4 |
+    g4:7 r8 c4 c8:7 |
+    f4 bf8 f4 bf8 |
+    f4 c8 d4:m r8 |
+    bf4 r8  f8 c4:7 |
+    f4 r8  c4 c8:7 |
+    f4
+}
 
 "sopran 1" = \relative c' {
     \partial 8  c8
@@ -171,6 +183,10 @@ global = {
 
 music = {
     \new ChoirStaff <<
+        \new ChordNames {
+            \set noChordSymbol = ""
+            \harmonies
+        }
         \new Staff = "women"
         <<
             \new Voice = "sopranos" {
