@@ -245,13 +245,13 @@ text = {\"text 1" \"text 2"}
     \new Staff = "women" <<
       \new Voice = "sopranos" {
         \voiceOne
-        \set midiInstrument = "choir aahs"
+        %\set midiInstrument = "organ"
         %\set midiMaximumVolume = 0.0
         { \global \sopranoMusic }
       }
       \new Voice = "altos" {
         \voiceTwo
-        \set midiInstrument = "violin"
+        \set midiInstrument = "flute"
         %\set midiMaximumVolume = 0.0
         << \global \altoMusic >>
       }
@@ -268,7 +268,7 @@ text = {\"text 1" \"text 2"}
         << \global \tenorMusic >>
       }
       \new Voice = "basses" {
-        \set midiInstrument = "contrabass"
+        \set midiInstrument = "cello"
         %\set midiMaximumVolume = 0.0
         \voiceTwo << \global \bassMusic >>
       }

@@ -3,6 +3,7 @@
 *.mid
 *.midi
 *.wav
+*.ogg
 *.mp3
 .DS_Store
 _build/
