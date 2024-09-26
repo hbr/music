@@ -232,6 +232,7 @@ text = {\"text 1" \"text 2"}
     composer = "Musik: 15. Jh"
     arranger = "Satz: Anonymus 19. Jh"
     poet = "Text: Lauda, 15. Jh"
+    tagline = #f
 }
 
 

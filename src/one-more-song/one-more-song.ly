@@ -5,6 +5,7 @@
     title = "There's one more song"
     composer = "Musik: Peter Hammersteen (*1956)"
     poet     = "Text: Peter Hammersteen"
+    tagline  = #f
 }
 
 

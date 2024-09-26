@@ -1,8 +1,9 @@
 \version "2.24.3"
 
 \header {
-    title =     "Alle meine Entchen"
+    title    =  "Alle meine Entchen"
     composer =  "Ernst Anschütz (1780-1861)"
+    tagline  = #f
 }
 
 \score {

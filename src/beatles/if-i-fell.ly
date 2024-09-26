@@ -4,6 +4,7 @@
 \header {
     title = "If I fell"
     composer = "Lennon/McCartney"
+    tagline = #f
 }
 
 
