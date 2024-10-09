@@ -201,8 +201,8 @@
 "john: So I hope you see ..." =
     \"john: If I give my heart ..."
 
-"john: you, and that she will cry ..." = \relative c' {
-    e4 | fs2 g2 | a2 r4
+"john: you, and that she will cry ..." = \relative c'' {
+    cs4 | fs,2 g2 | a2 r4
     af4 | g2. r8 b8 | d4 cs b
 }
 
