@@ -4,6 +4,8 @@
 
 \header {
     title = "Happy Birthday - 7 Modes"
+    subtitle = "Für Moritz zum 6. Geburtstag"
+    composer = "Bopa"
     tagline = ""
 }
 
