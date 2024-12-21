@@ -19,7 +19,9 @@ global = {
 
 
 "sopran Ich steh" = \relative d'' {
+       % d               C       F
     a4 | d e f d       | c4. bf8 a4 \breathe
+       % d       Bf      A
     c  | f,4. e8 f4 g4 | a2 a4 \breathe
 }
 
@@ -45,8 +47,11 @@ global = {
 
 
 "sopran Nimm hin" = \relative d'' {
+   % C   F    Bf               g       F
     c4 | f4 c d c            | bf4. c8 a4 \breathe
+   %     d    Bf               g       F
     c4 | f4 c d c            | bf4. c8 a4 \breathe
+   %     G  A   Bf             A    d
     a4 | b4 cs4 d8 (f) e (d) | cs2  d4\fermata
 }
 
@@ -66,7 +71,7 @@ global = {
 
 
 "bass Nimm hin" = \relative d' {
-    a4 | f a bf a | g g f
+    a4 | f a bf a  | g g f
     e  | d a' bf a | g c, f
     d  | g e f g   | a2 d,4
 
@@ -116,7 +121,7 @@ global = {
 
 "stanza 1" = \lyricmode {
     Ich | steh an dei -- ner | Krip -- pen hier
-    o   | Je -- su du ein    | Le -- ben.
+    o   | Je -- su du mein    | Le -- ben.
 
     Ich | kom -- me bring und | schen -- ke dir,
     was | du mir hast ge --   | ge -- ben.
@@ -236,6 +241,7 @@ global = {
         }
 
         \new Staff <<
+            \global
             \clef bass
 
             \new Voice = "tenor" {
