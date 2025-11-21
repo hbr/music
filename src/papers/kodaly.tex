@@ -33,23 +33,22 @@
 \subsection{Einsingen}
 %----------------------------------------------------------------------
 
-Dur und Moll Akkord:
+\subsubsection{Dur und Moll Akkord}
 
 \begin{lilypond}
     \language "english"
 
     <<
     \new Voice = "main" {
-        \time 3/4
         \relative c' {
-            c4 e g  | c4 g e  | c2. | r2. |
-            c4 ef g | c4 g ef | c2. | r2. |
+            \tuplet 3/2 4 { c8 e  g  c g e  } c2 |
+            \tuplet 3/2 4 { c8 ef g  c g ef } c2 |
         }
     }
 
     \new Lyrics \lyricsto "main" {
-        do mi sol | do sol mi | do |
-        do me sol | do sol me | do |
+        do mi sol  do sol mi   do |
+        do me sol  do sol me   do |
     }
     >>
 \end{lilypond}
@@ -58,21 +57,40 @@ Dur und Moll Akkord:
 
 
 
-Variation: Dur / Moll Akkord abwärts
+\subsubsection{Variation: Dur / Moll Akkord abwärts}
 
 \begin{lilypond}
     \language "english"
     <<
     \new Voice = "main" {
         \relative c'' {
-            c4  g e  g  | c,1 |
-            c'4 g ef g  | c,1 |
+            c8  g e  g   c,2 |
+            c'8 g ef g   c,2 |
         }
     }
 
     \new Lyrics \lyricsto "main" {
-        do sol mi sol | do |
-        do sol me sol | do |
+        do sol mi sol do |
+        do sol me sol do |
+    }
+    >>
+\end{lilypond}
+
+
+
+\subsubsection{sol - to in Terzen abwärts}
+
+\begin{lilypond}
+    \language "english"
+    <<
+    \new Voice = "main" {
+        \relative {
+            g'8 e  f d  e c  d b | c1
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+        sol mi fa re mi do re ti | do
     }
     >>
 \end{lilypond}
@@ -80,7 +98,31 @@ Variation: Dur / Moll Akkord abwärts
 
 
 
-"I love to sing with you, I love it, I love it, I do
+
+\subsubsection{Oktave in Terzen aufwärts und abwärts}
+
+\begin{lilypond}
+    \language "english"
+    <<
+    \new Voice = "main" {
+        \relative {
+            c'8 e  d f  e g  f a | g b  a c  b d  c4 |
+            c8  a  b g  a f  g e | f d  e c  d b  c4 |
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+        do mi  re fa   mi sol  fa  la | sol ti  la do  ti re do |
+        do la  ti sol  la fa   sol mi | fa  re  mi do  re ti do |
+    }
+    >>
+\end{lilypond}
+
+
+
+
+
+\subsubsection{"I love to sing with you, I love it, I love it, I do"}
 
 \begin{lilypond}
     \language "english"
@@ -109,6 +151,55 @@ Variation: Dur / Moll Akkord abwärts
     }
     >>
 \end{lilypond}
+
+
+
+
+
+\subsubsection{Give me a break}
+
+\begin{lilypond}
+    \language "english"
+    <<
+    \new Voice = "main" {
+        \relative c' {
+            c8.  e16   g4   c2      | bf8. bf16    a4   g2      |
+            bf8. bf16  a8. a16  g8. g16 a4 | c,4  c     c2      |
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+            do mi sol do  |  me me la sol |
+            me me la la sol sol la |  sol sol sol
+    }
+
+    \new Lyrics \lyricsto "main" {
+        Give me a break, | give me a break
+        break me up a piece of that | kit -- kat bar.
+    }
+    >>
+\end{lilypond}
+
+
+
+
+
+
+
+
+\subsection{Happy Birthday}
+%----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+\subsection{Las Ma\~{n}anitas}
+%----------------------------------------------------------------------
+
 
 
 
