@@ -1,0 +1,408 @@
+\documentclass[a4paper]{article}
+
+\begin{document}
+
+
+\section{Dummy}
+
+
+\begin{lilypond}
+    \relative {
+        c'2 e2 \tuplet 3/2 { f8 a b } a2 e4
+    }
+\end{lilypond}
+
+
+
+
+
+
+%======================================================================
+% Appendix
+%======================================================================
+\appendix
+
+
+
+
+\section {Material}
+
+
+
+
+\subsection{Einsingen}
+%----------------------------------------------------------------------
+
+Dur und Moll Akkord:
+
+\begin{lilypond}
+    \language "english"
+
+    <<
+    \new Voice = "main" {
+        \time 3/4
+        \relative c' {
+            c4 e g  | c4 g e  | c2. | r2. |
+            c4 ef g | c4 g ef | c2. | r2. |
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+        do mi sol | do sol mi | do |
+        do me sol | do sol me | do |
+    }
+    >>
+\end{lilypond}
+
+
+
+
+
+Variation: Dur / Moll Akkord abwärts
+
+\begin{lilypond}
+    \language "english"
+    <<
+    \new Voice = "main" {
+        \relative c'' {
+            c4  g e  g  | c,1 |
+            c'4 g ef g  | c,1 |
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+        do sol mi sol | do |
+        do sol me sol | do |
+    }
+    >>
+\end{lilypond}
+
+
+
+
+"I love to sing with you, I love it, I love it, I do
+
+\begin{lilypond}
+    \language "english"
+    <<
+    \new Voice = "main" {
+        \key g \major
+        \transpose c g
+        \relative g {
+            \partial 4
+            g4 | g'2 ~ 8 f e d |
+                 e2.         a4|
+                 g16 g8 g16   f16 f8 f16   e16 e r8    d4 |
+                 c1
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+        sol | sol fa mi re | mi
+        la  | sol sol sol   fa fa fa   mi mi   re |
+              do
+    }
+
+    \new Lyrics \lyricsto "main" {
+        I | love to sing with | you
+        I | love it I  love it I love it I do.
+    }
+    >>
+\end{lilypond}
+
+
+
+
+
+
+
+\subsection{We Shall Overcome}
+%----------------------------------------------------------------------
+
+
+\begin{lilypond}
+    \language "english"
+
+    "melody: We shall" = \relative g' {
+        g4      g       a       a |
+        g4.         (f8 e2)       |
+    }
+
+    <<
+    \new Voice = "main" {
+        % 1-4
+        \"melody: We shall"
+        \"melody: We shall"
+
+        \relative {
+            % 5-8
+            g'4 g  a b | c2 d2 |
+            b2( \tuplet 3/2 {a4 b a} | g2)
+
+            % 9-12
+                      a4(b) |
+            c2 b4 a | g1    |
+            a2 g4 f | e2.
+
+            % 13-16
+                      f4  |
+            g4 g c,   f   | e2 d2 |
+            c1            | r1    |
+
+
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+        sol sol la la | sol-fa-mi |
+        sol sol la la | sol-fa-mi |
+
+        sol sol la ti | do   re   |
+        ti-la-ti-la-sol  la-ti |
+
+        do  ti la     | sol |
+        la sol fa     | mi
+
+        fa | sol sol do fa | mi re |
+             do |
+    }
+
+    \new Lyrics \lyricsto "main" {
+        We shall o -- ver | come. |
+        We shall o -- ver | come. |
+
+        We shall  o -- ver | come some |
+        day
+
+        Oh | deep in my      | heart |
+             I do be --      | lieve
+
+        that | we shall o -- ver -- | come some |
+               day.
+    }
+    >>
+\end{lilypond}
+
+
+
+
+
+
+
+\subsection{Adeste Fideles}
+%----------------------------------------------------------------------
+
+\begin{lilypond}
+    \language "english"
+
+    melody = \relative {
+        \partial 4
+        c'4      | c2          g4   c4 | d2        g,2    |
+                   e'4   d4    e    f  | e2        d4
+
+        c4       | c2          b4   a  | b4(c)      d
+        e4       | b2          a       | g1               |
+
+                   g'2         f4   e  | f2   e2  |
+                   d4    e     c    d  | b4(  a)  g
+
+        c4       | c4    b     c    d  | c2       g4
+        e'4      | e4    d     e    f  | e2       d4
+
+        e4       | f4    e     d    c  | b2       c4   f |
+                   e2(         d2)     | c2
+    }
+
+    <<
+    \new Voice = "main" {
+        \key g \major
+        \transpose c g \melody
+    }
+
+    \new Lyrics \lyricsto "main" {
+        do |  do sol do   | re sol  |
+              mi re mi fa | mi re
+
+        do     |  do   ti la  | ti-do re
+        mi     |  ti   la     | sol       |
+
+                  sol    fa mi  | fa mi  |
+                  re  mi do re  | ti-la sol
+
+        do     |  do   ti  do re | do sol
+        mi     |  mi   re  mi fa | mi re
+
+        mi     |  fa mi re do    | ti do
+        fa     |  mi-re          | do
+    }
+
+    \new Lyrics \lyricsto "main" {
+        Her --    | bei,         o ihr        | Gläub -- gen |
+                  | fröh -- lich tri -- um -- | pfie -- ret,
+
+        o         | ko --       mmet,  oh     | ko -- mmet
+        nach      | Beth --      le  --       | hem!
+
+                  | Se -- het das             | Kind -- lein, |
+                    uns zum Heil ge --        | bo -- ren!
+
+        Oh        | la -- sset uns an         | be -- ten,
+        oh        | la -- sset uns an         | be -- ten,
+
+        oh        | la -- set uns an          | be -- ten
+        den       | Kö --                     | nig
+
+    }
+    >>
+\end{lilypond}
+
+
+
+
+
+
+\subsection{Sounds of Music}
+%----------------------------------------------------------------------
+
+
+"When you know the notes to sing":
+
+\begin{lilypond}
+    \language "english"
+
+    "melody: when you" = \relative c' {
+        g'4       c,       a'       f       |
+        e4        c        d2               |
+
+        g'4       c,       a'       b       |
+        c4        d        c2               |
+    }
+
+
+    <<
+    \new Voice = "when you" {
+        \"melody: when you"
+    }
+
+    \new Lyrics \lyricsto "when you" {
+        sol  do la fa | mi re do |
+        sol  do la ti | do re do |
+    }
+
+    \new Lyrics \lyricsto "when you" {
+        When you know the | notes to sing |
+        you  can sing most | a -- ny  thing
+    }
+    >>
+\end{lilypond}
+
+
+Diese Melody kann überlagert werden mit:
+
+\begin{lilypond}
+    \language "english"
+
+    "melody: do-mi-mi" = \relative c' {
+        c8 e     e4       e8  g     g4 |
+        d8 f     f4       a8  b     b4
+    }
+
+    <<
+    \new Voice = "do-mi-mi" {
+        \"melody: do-mi-mi"
+    }
+
+    \new Lyrics \lyricsto "do-mi-mi" {
+        do mi mi  mi sol sol |
+        re fa fa  la ti  ti
+    }
+    >>
+\end{lilypond}
+
+
+
+
+
+
+
+\subsection{Can't Help Falling in Love}
+%----------------------------------------------------------------------
+
+\begin{lilypond}
+    "melody: Wise men" = \relative c' {
+        % v          v          v         v
+
+          c2                    g'                 |
+          c,2                   r4        \tuplet 3/2 {r8 d  e}  |
+
+          f2                    e2                 |
+          d2                    r4        \tuplet 3/2 {r4    g,8}|
+
+          a2                    b2                 |
+          c2                    \tuplet 3/2 {d4     e      f}    |
+
+          e2                    d                  |
+          c2                    r2                 |
+    }
+
+    "fragment: Like a river flows" = \relative c' {
+        \tuplet 3/2 {b4 e4 g8 b } a2               |
+    }
+
+    "fragment: some things are meant to be" = \relative g' {
+        \tuplet 3/2 {g4 g2}  \tuplet 6/4 { r4 e8 g4 e8}  |
+        f2  r2
+    }
+
+
+    <<
+    \new Voice = "melody" {
+        \key  f \major
+
+        \transpose c f {
+            \"melody: Wise men"
+
+            \"fragment: Like a river flows"
+            \"fragment: Like a river flows"
+            \"fragment: Like a river flows"
+            \"fragment: some things are meant to be"
+        }
+    }
+
+    \new Lyrics \lyricsto "melody" {
+        do sol |
+        do   re mi |
+        fa mi |
+        re sol |
+        la ti  |
+        do  re mi fa |
+        mi  re |
+        do  |
+        ti mi sol ti la |
+        ti mi sol ti la |
+        ti mi sol ti la |
+        sol sol mi sol mi |
+        fa
+    }
+
+    \new Lyrics \lyricsto "melody" {
+        Wise men |
+        say, on -- ly |
+        fools rush |
+        in,   but  |
+        I  can't    |
+        help fa -- lling in |
+        love with |
+        you.      |
+
+        Like a ri -- ver  flows |
+        sure -- ly to the sea   |
+        dar -- ling so it goes  |
+        some things are meant to|
+        be |
+    }
+    >>
+\end{lilypond}
+
+
+\end{document}
