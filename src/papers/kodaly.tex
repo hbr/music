@@ -105,6 +105,56 @@
 \end{lilypond}
 
 
+Piano part:
+
+\begin{lilypond}
+    \language "english"
+
+    <<
+    \new Voice = "upper" {
+        \clef bass
+        \relative {
+            | e4 f g d
+            | e8 f4. r8 ds4.
+        }
+    }
+
+    \new Lyrics \lyricsto "upper" {
+        | mi fa so re
+        | mi fa    re
+    }
+
+
+    \new Voice = "middle" {
+        \clef bass
+        \relative {
+            | c4 d e f
+            | g8 a4. r8 gs4.
+        }
+    }
+
+    \new Lyrics \lyricsto "middle" {
+        | do re mi fa
+        | so la  so
+    }
+
+
+    \new Voice = "low" {
+        \clef bass
+        \relative {
+            | c4 c c c
+            | c8 c4. r8 c4.
+        }
+    }
+
+    \new Lyrics \lyricsto "low" {
+        | do do do do
+        | do do ti
+    }
+    >>
+\end{lilypond}
+
+
 
 
 \subsubsection{Quinte in Terzen aufwärts und abwärts}

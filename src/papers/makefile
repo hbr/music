@@ -2,12 +2,6 @@
 
 %.pdf: %.tex
 	lilypond-book --output=../../_build $<
+	rm *.out
 	(cd ../../_build; pdflatex $<)
 	cp ../../_build/$@ .
-
-kodaly-tex:
-	lilypond-book --output=../../_build kodaly.tex
-
-kodaly-pdf:
-	(cd ../../_build; pdflatex kodaly)
-	cp ../../_build/kodaly.pdf .
