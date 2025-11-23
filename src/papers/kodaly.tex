@@ -1,16 +1,13 @@
 \documentclass[a4paper]{article}
+\usepackage[pdftex]{hyperref}
+
 
 \begin{document}
 
 
-\section{Dummy}
 
+\tableofcontents
 
-\begin{lilypond}
-    \relative {
-        c'2 e2 \tuplet 3/2 { f8 a b } a2 e4
-    }
-\end{lilypond}
 
 
 
@@ -78,7 +75,7 @@
 
 
 
-\subsubsection{sol - to in Terzen abwärts}
+\subsubsection{sol - do in Terzen abwärts}
 
 \begin{lilypond}
     \language "english"
@@ -230,7 +227,7 @@
 
 
 
-\subsection{Es tanzt ein Bi-ba-butze-mann}
+\subsection{Es tanzt ein Bi-ba-but-ze-mann}
 %----------------------------------------------------------------------
 
 
@@ -285,7 +282,7 @@
         Es | tanzt ein Bi -- ba --
         | bu -- tze Mann in
         | uns -- rem Haus he --
-        | rum
+        | rum.
 
         Er | rüt -- telt sich, er
         | schüt -- telt sich, er
@@ -305,6 +302,62 @@
 \subsection{Happy Birthday}
 %----------------------------------------------------------------------
 
+
+
+\begin{lilypond}
+    \language "english"
+    <<
+    \new Voice = "main" {
+        \time 3/4
+        \partial 4
+        \relative g' {
+            g8 g
+            | a4 g c
+            | b2
+            g8 g
+            | a4 g d'
+            | c2
+
+            g8 g
+            | g'4 e c4
+            | b4  a
+            f'8 f
+            | e4  c d
+            | c2
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+        so so
+        | la so do
+        | ti
+        so so
+        | la so re
+        | do
+
+        so so
+        | so mi do
+        | ti la
+        fa fa
+        | mi do re
+        | do
+    }
+
+    \new Lyrics \lyricsto "main" {
+        Hap -- py
+        | Birth -- day to you,
+        Hap -- py
+        | Birth -- day to you,
+
+        Hap -- py
+        | Birth -- day dear
+        | X -- X,
+        Hap -- py
+        | Birth -- day to
+        | you.
+    }
+    >>
+\end{lilypond}
 
 
 
