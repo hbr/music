@@ -1,11 +1,15 @@
 \documentclass[a4paper]{article}
 \usepackage[pdftex]{hyperref}
 
+\title{Melodieelemente in Solfege}
+\author{Helmut Brandl}
+\date{}
 
 \begin{document}
 
 
 
+\maketitle
 \tableofcontents
 
 
@@ -29,6 +33,10 @@
 
 \subsection{Einsingen}
 %----------------------------------------------------------------------
+
+
+
+
 
 \subsubsection{Dur und Moll Akkord}
 
@@ -75,19 +83,50 @@
 
 
 
-\subsubsection{sol - do in Terzen abwärts}
+
+
+\subsubsection{Indigo: do -- sol -- do}
 
 \begin{lilypond}
     \language "english"
     <<
     \new Voice = "main" {
-        \relative {
-            g'8 e  f d  e c  d b | c1
+        \relative c' {
+            | c8 e  d f  e g  f d
+            | c1
         }
     }
 
     \new Lyrics \lyricsto "main" {
-        sol mi fa re mi do re ti | do
+        | do mi re fa mi sol fa re
+        | do
+    }
+    >>
+\end{lilypond}
+
+
+
+
+\subsubsection{Quinte in Terzen aufwärts und abwärts}
+
+\begin{lilypond}
+    \language "english"
+    <<
+    \new Voice = "main" {
+        \relative c' {
+            | c8 e d f e g f a
+            | g1
+
+            | g8 e  f d  e c  d b
+            | c1
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+        | do mi re fa mi so fa la
+        | so
+        | so mi fa re mi do re ti
+        | do
     }
     >>
 \end{lilypond}
@@ -368,6 +407,93 @@
 \subsection{Las Ma\~{n}anitas}
 %----------------------------------------------------------------------
 
+\begin{lilypond}
+    \language "english"
+
+    <<
+    \new Voice = "main" {
+        \time 3/4
+        \partial 4
+        \relative {
+            g8 g
+            | c4.   c8  b8 c
+            | d4.   b8  c8 d
+            | e4.   c8  d8 e
+            | f2
+
+            f8 f
+            | e4.   d8 c b
+            | d4 c8 b c d
+            | e4  f    d
+            | c2
+
+
+            e4
+            | d4  b8 b c d
+            | e4  c    e
+            | d4  b8 b c d
+            | e2
+            c8 c
+            | f4.   f8 f f
+            | e4  c8 c c d
+            | e4  f    d
+            | c2
+        }
+    }
+
+    \new Lyrics \lyricsto "main" {
+        so so
+        | do    do ti do
+        | re    ti do re
+        | mi    do re mi
+        | fa
+
+        fa fa
+        | mi    re do ti
+        | re do ti do re
+        | mi  fa   re
+        | do
+
+        mi
+        | re ti ti do re
+        | mi  do  mi
+        | re ti ti do re
+        | mi
+
+        do do
+        | fa fa fa fa
+        | mi do do do re
+        | mi fa re
+        | do
+    }
+
+    \new Lyrics \lyricsto "main" {
+        Es -- tas
+        | son   las ma -- ña
+        | ni -- tas que can --
+        | ta -- ba.el rey Da --
+        | vid
+
+        a las
+        | mu -- cha -- chas bo --
+        | ni -- tas se las can --
+        | ta -- mos a --
+        | sí.
+
+        Des --
+        | pier -- ta mi bien des --
+        | pier -- ta, mi --
+        | ra  que ya-a --  ma -- ne --
+        | cio,
+
+        ya los
+        | pá -- ja -- ri -- tos
+        | can -- tan la lu -- na
+        | ya se me --
+        | tió.
+    }
+    >>
+\end{lilypond}
 
 
 
@@ -657,7 +783,7 @@ Diese Melody kann überlagert werden mit:
         Like a ri -- ver  flows |
         sure -- ly to the sea   |
         dar -- ling so it goes  |
-        some things are meant to|
+        some things are meant to |
         be |
     }
     >>
