@@ -840,4 +840,50 @@ Diese Melody kann überlagert werden mit:
 \end{lilypond}
 
 
+
+
+
+
+
+\subsection{Somewhere over the Rainbow}
+%----------------------------------------------------------------------
+
+\begin{lilypond}
+    <<
+    \new Voice = "melody" {
+        \relative c' {
+            | c2 c'
+            | b4 g8 a b4 c4
+            | c,2 a'
+            | g1
+            | a,2 f'
+            | e4 c8 d e4 f
+            | d4 b8 c d4 e
+            | c1
+        }
+    }
+
+    \new Lyrics \lyricsto "melody" {
+        | do do
+        | ti so la ti do
+        | do la so
+        | la fa
+        | mi do re mi fa
+        | re ti do re mi
+        | do
+    }
+
+    \new Lyrics \lyricsto "melody" {
+        | Some -- where
+        | o -- ver the rain -- bow,
+        | way up
+        | high,
+        | there's a
+        | land that I heard of
+        | once in a lul -- la -- by.
+    }
+    >>
+\end{lilypond}
+
+
 \end{document}
