@@ -1,5 +1,6 @@
 \version "2.24.3"
 \language "english"
+\include "../scheme-functions.ly"
 
 %{
 Deutscher Text
@@ -145,96 +146,206 @@ bassTwo = \relative {
 }
 
 
-\score {
-    \new ChoirStaff
-    <<
-        \new Staff <<
-            \clef treble
-            \key  d \major
-            \time 4/4
+makeScoreInner =
+#(define-music-function
+    (select) (number?)
+    #{
+        \new ChoirStaff
+        <<
+            \new Staff <<
+                \clef treble
+                \key  d \major
+                \time 4/4
 
-            \new Voice = "soprano" {
-                \voiceOne
-                \set midiInstrument = "violin"
-                \soprano
-            }
-
-            \new Voice = "alto" {
-                \voiceTwo
-                \set midiInstrument = "flute"
-                \alto
-            }
-        >>
-
-        \new Lyrics \lyricsto "soprano" { \"stanza 1" }
-
-        \new Staff <<
-            \clef bass
-            \key d \major
-            \time 4/4
-
-            {
-                \new Voice = "tenorOne" {
+                \new Voice = "soprano" {
                     \voiceOne
-                    \set midiInstrument = "tenor sax"
-                    \tenorOne
+                    \set midiInstrument = "violin"
+                    \set midiMaximumVolume = #(voice-volume "soprano" select)
+                    \soprano
                 }
-                \new Voice = "tenorTwo" {
-                    \voiceOne
-                    \set midiInstrument = "tenor sax"
-                    \tenorTwo
-                }
-            }
 
-            {
-                \new Voice = "bassOne" {
+                \new Voice = "alto" {
                     \voiceTwo
-                    \set midiInstrument = "cello"
-                    \bassOne
+                    \set midiInstrument = "flute"
+                    \set midiMaximumVolume = #(voice-volume "alto" select)
+                    \alto
                 }
-                \new Voice = "bassTwo" {
-                    \voiceTwo
-                    \set midiInstrument = "cello"
-                    \bassTwo
-                }
-            }
+            >>
 
-            \new Lyrics \lyricsto "tenorTwo" \"stanza 1: low"
+            \new Lyrics \lyricsto "soprano" { \"stanza 1" }
+
+            \new Staff <<
+                \clef bass
+                \key d \major
+                \time 4/4
+
+                {
+                    \new Voice = "tenorOne" {
+                        \voiceOne
+                        \set midiInstrument = "tenor sax"
+                        \set midiMaximumVolume = #(voice-volume "tenor" select)
+                        \tenorOne
+                    }
+                    \new Voice = "tenorTwo" {
+                        \voiceOne
+                        \set midiInstrument = "tenor sax"
+                        \set midiMaximumVolume = #(voice-volume "tenor" select)
+                        \tenorTwo
+                    }
+                }
+
+                {
+                    \new Voice = "bassOne" {
+                        \voiceTwo
+                        \set midiInstrument = "cello"
+                        \set midiMaximumVolume = #(voice-volume "bass" select)
+                        \bassOne
+                    }
+                    \new Voice = "bassTwo" {
+                        \voiceTwo
+                        \set midiInstrument = "cello"
+                        \set midiMaximumVolume = #(voice-volume "bass" select)
+                        \bassTwo
+                    }
+                }
+
+                \new Lyrics \lyricsto "tenorTwo" \"stanza 1: low"
+            >>
         >>
-    >>
+    #}
+)
 
-    \layout {}
-    \midi   {
-        \context {
-          \Staff
-          \remove "Staff_performer"
+
+\book {
+    \score {
+        #(makeScoreInner 0)
+
+        \layout {}
+
+        \midi   {
+            \context {
+              \Staff
+              \remove "Staff_performer"
+            }
+            \context {
+              \Voice
+              \consists "Staff_performer"
+            }
         }
-        \context {
-          \Voice
-          \consists "Staff_performer"
+    }
+
+
+    \markup {
+        \fill-line {
+            \hspace #1
+            \column {
+                \line { 2. Joy to the world, the saviour reigns, }
+                \line { that men their songs employ. }
+                \line { While fields and floods, rocks, hills and plains }
+                \line { ||: repeat the sounding joy, :|| }
+                \line { repeat the sounding the sounding joy.}
+            }
+            \hspace #2
+            \column {
+                \line { 3. He rules the world with truth and grace }
+                \line { and makes the nations prove }
+                \line { ||: the glories of his righteousness :|| }
+                \line { ||: and wonders of his love :|| }
+                \line { and wonders and wonders of his love. }
+            }
+            \hspace #1
         }
     }
 }
 
 
-\markup {
-    \fill-line {
-        \hspace #1
-        \column {
-            \line { 2. Joy to the world, the saviour reigns, }
-            \line { that men their songs employ. }
-            \line { While fields and floods, rocks, hills and plains }
-            \line { ||: repeat the sounding joy, :|| }
-            \line { repeat the sounding the sounding joy.}
+
+
+
+\book {
+    \bookOutputSuffix "soprano"
+
+    \score {
+        #(makeScoreInner 1)
+
+        \midi   {
+            \context {
+              \Staff
+              \remove "Staff_performer"
+            }
+            \context {
+              \Voice
+              \consists "Staff_performer"
+            }
         }
-        \hspace #2
-        \column {
-            \line { 3. He rules the world with truth and grace }
-            \line { and makes the nations prove }
-            \line { ||: the glories of his righteousness :|| }
-            \line { ||: and wonders of his love :|| }
-            \line { and wonders and wonders of his love. }
+    }
+}
+
+
+
+
+
+\book {
+    \bookOutputSuffix "alto"
+
+    \score {
+        #(makeScoreInner 2)
+
+        \midi   {
+            \context {
+              \Staff
+              \remove "Staff_performer"
+            }
+            \context {
+              \Voice
+              \consists "Staff_performer"
+            }
         }
-        \hspace #1
+    }
+}
+
+
+
+
+
+\book {
+    \bookOutputSuffix "tenor"
+
+    \score {
+        #(makeScoreInner 3)
+
+        \midi   {
+            \context {
+              \Staff
+              \remove "Staff_performer"
+            }
+            \context {
+              \Voice
+              \consists "Staff_performer"
+            }
+        }
+    }
+}
+
+
+
+
+
+\book {
+    \bookOutputSuffix "bass"
+
+    \score {
+        #(makeScoreInner 4)
+
+        \midi   {
+            \context {
+              \Staff
+              \remove "Staff_performer"
+            }
+            \context {
+              \Voice
+              \consists "Staff_performer"
+            }
+        }
     }
 }
