@@ -243,7 +243,7 @@ makeScoreInner =
                 \line { that men their songs employ. }
                 \line { While fields and floods, rocks, hills and plains }
                 \line { ||: repeat the sounding joy, :|| }
-                \line { repeat the sounding the sounding joy.}
+                \line { the sounding, the sounding joy.}
             }
             \hspace #2
             \column {
@@ -251,7 +251,7 @@ makeScoreInner =
                 \line { and makes the nations prove }
                 \line { ||: the glories of his righteousness :|| }
                 \line { ||: and wonders of his love :|| }
-                \line { and wonders and wonders of his love. }
+                \line { and wonders of his love. }
             }
             \hspace #1
         }
