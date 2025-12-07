@@ -1,12 +1,8 @@
 # Alle Jahre wieder
 
-    D    A     D  A
     Alle Jahre wieder
-    Bm        G       A
     kommt das Christuskind
-    D       G D  G
     auf die Erde nieder,
-    D      A        G
     wo wir Menschen sind.
 
     Kehrt mit seinem Segen
