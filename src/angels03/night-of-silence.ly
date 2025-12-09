@@ -231,7 +231,7 @@ makeScoreInner =
                 \clef treble
                 \time 3/4
                 \key a \major
-                \tempo 4 = 120
+                \tempo 4 = 90
 
                 \new Voice = "soprano" {
                     \set Staff.midiInstrument = "flute"
