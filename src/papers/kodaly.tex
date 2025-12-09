@@ -886,4 +886,62 @@ Diese Melody kann überlagert werden mit:
 \end{lilypond}
 
 
+
+
+
+
+
+
+
+\subsection{Alle Jahre wieder}
+%----------------------------------------------------------------------
+
+
+\begin{lilypond}
+    <<
+    \new Voice = "melody" {
+        \relative g' {
+            | g4. a8 g4 f
+            | e2 d
+            | c4 d8 (e) f4 e
+            | d1
+
+            | e4 g a g
+            | c2 b4 (a)
+            | g4 f8 (e) f4 g
+            | e1
+        }
+    }
+
+    \new Lyrics \lyricsto "melody" {
+        | so la so fa
+        | mi re
+        | do re-mi fa mi
+        | re
+
+        | mi so la so
+        | do ti-la
+        | so fa-mi fa so
+        | mi
+    }
+
+    \new Lyrics \lyricsto "melody" {
+        | Al -- le Jah -- re
+        | wie -- der
+        | kommt das Chris -- tus
+        | kind,
+
+        | auf die Er -- de
+        | nie -- der
+        | wo wir Men -- schen
+        | sind.
+    }
+    >>
+\end{lilypond}
+
+
+
+
+
+
 \end{document}
