@@ -46,12 +46,12 @@ refrain = \relative c' {
     d8 d d
     | e4. e4 e8
     | e4. g4 c8
-    | b4. g4.
+    | b4. d,4.
     | r4.
 
     d8 d d
     | d8 d4  r8 d8 d
-    | fs4. ~ 8 e8 fs8
+    | d4. ~ 8   e8 fs8
     | g2.
     | r4.
 }
@@ -159,8 +159,8 @@ verse = \relative c' {
     | hei-te -- res Trei -- ben her --
     | aus.
 
-    Kommt's
-    | vom Weih -- nachts -- ba -- zaar oder
+    Kommt's-vom
+    | Weih -- nachts -- ba -- za -- ar oder
       vom O -- ster -- feu -- er, oder
     | gibt es gar was kos -- ten --
     | los,
