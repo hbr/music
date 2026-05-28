@@ -5,6 +5,19 @@
 	lilypond $<
 
 
+%-soprano.midi: %.ly
+	lilypond $<
+
+%-alto.midi: %.ly
+	lilypond $<
+
+%-tenor.midi: %.ly
+	lilypond $<
+
+%-bass.midi: %.ly
+	lilypond $<
+
+
 %.mp3: %.midi
 	rm $@; \
 	timidity $< -Ow -o - \
