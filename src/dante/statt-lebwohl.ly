@@ -269,7 +269,7 @@
 "soprano refrain 1" = \relative c'' {
     b4^\f^"Refrain" c
     | d2. b4
-    | g2  b4 d
+    | g2  b4 d  \pageBreak
     | c2. a4
     | g2 \breathe
         c,4^\mf d
