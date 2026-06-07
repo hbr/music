@@ -476,17 +476,17 @@ makeScoreMusic =
         <<
             \tempo 2 = 60
 
-            #(makeVoice
+            \makeVoice
                 "soprano"
-                soprano
+                \soprano
                 "violin"
-                (voice-volume "soprano" select))
+                #(voice-volume "soprano" select)
 
-            #(makeVoice
+            \makeVoice
                 "alto"
-                alto
-                "tenor sax"
-                (voice-volume "alto" select))
+                \alto
+                "oboe"
+                #(voice-volume "alto" select)
 
 
             \new Lyrics \lyricsto "soprano" {
@@ -507,11 +507,11 @@ makeScoreMusic =
         \new Staff \with {instrumentName = "B"} {
             \clef bass
 
-            #(makeVoice
+            \makeVoice
                 "bass"
-                bass
+                \bass
                 "cello"
-                (voice-volume "bass" select))
+                #(voice-volume "bass" select)
         }
     >>
     #}
@@ -528,7 +528,7 @@ makeScoreMusic =
 
 \book {
     \score {
-        #(makeScoreMusic 0)
+        \makeScoreMusic 0
 
         \layout { }
     }
