@@ -55,9 +55,11 @@
 
 
 "soprano intro" = \relative {
+    \section
+    \sectionLabel "Intro"
     \partial 2
 
-    c'4^\p^"Intro dolce" d
+    c'4^\p d
     | e4 g g e
     | d2. c4
     | c1 ~
@@ -136,7 +138,9 @@
 
 
 "soprano verse" = \relative c' {
-    c4^\mf^"Verse" d
+    \section
+    \sectionLabel "Verse"
+    c4^\mf d
     | e2. g4
     | f4^\< e d c\!
     | c'2. a4
@@ -267,7 +271,9 @@
 
 
 "soprano refrain 1" = \relative c'' {
-    b4^\f^"Refrain" c
+    \section
+    \sectionLabel "Refrain"
+    b4^\f c
     | d2. b4
     | g2  b4 d  \pageBreak
     | c2. a4
