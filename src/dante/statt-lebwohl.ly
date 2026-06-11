@@ -131,7 +131,7 @@
     | hät -- te,  wenn er
     | ehr _ -- lich
     | ist,  lie -- ber
-    | län -- ger hir mit
+     län -- ger hier mit
     | Dir ver --
     | weilt. __
 }
@@ -304,7 +304,7 @@
       g2 c4( b)
      \time 3/2
       c1^\fermata
-            c,4 e
+            c,4^\p e
       \time 2/2
       e4 g g e
       d2. c4
