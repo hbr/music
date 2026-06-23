@@ -9,6 +9,9 @@
     tagline = ""
 }
 
+\paper {
+    page-count = #1
+}
 
 
 
@@ -525,6 +528,17 @@ makeScoreMusic =
 % Score
 % ----------------------------------------------------------------------
 
+\midi   {
+    \context {
+        \Staff
+        \remove "Staff_performer"
+    }
+    \context {
+        \Voice
+        \consists "Staff_performer"
+    }
+}
+
 
 \book {
     \score {
@@ -536,16 +550,7 @@ makeScoreMusic =
     \score {
         \unfoldRepeats {#(makeScoreMusic 0)}
 
-        \midi   {
-            \context {
-                \Staff
-                \remove "Staff_performer"
-            }
-            \context {
-                \Voice
-                \consists "Staff_performer"
-            }
-        }
+        \midi {}
     }
 }
 
@@ -559,16 +564,7 @@ makeScoreMusic =
     \score {
         \unfoldRepeats {#(makeScoreMusic 1)}
 
-        \midi   {
-            \context {
-                \Staff
-                \remove "Staff_performer"
-            }
-            \context {
-                \Voice
-                \consists "Staff_performer"
-            }
-        }
+        \midi {}
     }
 }
 
@@ -582,16 +578,7 @@ makeScoreMusic =
     \score {
         \unfoldRepeats {#(makeScoreMusic 2)}
 
-        \midi   {
-            \context {
-                \Staff
-                \remove "Staff_performer"
-            }
-            \context {
-                \Voice
-                \consists "Staff_performer"
-            }
-        }
+        \midi {}
     }
 }
 
@@ -605,15 +592,6 @@ makeScoreMusic =
     \score {
         \unfoldRepeats {#(makeScoreMusic 4)}
 
-        \midi   {
-            \context {
-                \Staff
-                \remove "Staff_performer"
-            }
-            \context {
-                \Voice
-                \consists "Staff_performer"
-            }
-        }
+        \midi {}
     }
 }

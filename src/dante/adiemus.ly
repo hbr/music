@@ -624,6 +624,19 @@ bass = \makeVoice
 
 
 
+
+\midi   {
+    \context {
+        \Staff
+        \remove "Staff_performer"
+    }
+    \context {
+        \Voice
+        \consists "Staff_performer"
+    }
+}
+
+
 makeVoice = #(define-music-function
     (name music instrument volume)
     (string? ly:music? string? number?)
@@ -706,20 +719,10 @@ ScoreMusic = #(define-music-function
         \layout {}
     }
 
-
     \score {
         \unfoldRepeats \ScoreMusic 0
 
-        \midi   {
-            \context {
-                \Staff
-                \remove "Staff_performer"
-            }
-            \context {
-                \Voice
-                \consists "Staff_performer"
-            }
-        }
+        \midi {}
     }
 }
 
@@ -733,16 +736,7 @@ ScoreMusic = #(define-music-function
     \score {
         \unfoldRepeats \ScoreMusic 1
 
-        \midi   {
-            \context {
-                \Staff
-                \remove "Staff_performer"
-            }
-            \context {
-                \Voice
-                \consists "Staff_performer"
-            }
-        }
+        \midi {}
     }
 }
 
@@ -756,16 +750,7 @@ ScoreMusic = #(define-music-function
     \score {
         \unfoldRepeats \ScoreMusic 2
 
-        \midi   {
-            \context {
-                \Staff
-                \remove "Staff_performer"
-            }
-            \context {
-                \Voice
-                \consists "Staff_performer"
-            }
-        }
+        \midi {}
     }
 }
 
@@ -779,16 +764,7 @@ ScoreMusic = #(define-music-function
     \score {
         \unfoldRepeats \ScoreMusic 3
 
-        \midi   {
-            \context {
-                \Staff
-                \remove "Staff_performer"
-            }
-            \context {
-                \Voice
-                \consists "Staff_performer"
-            }
-        }
+        \midi {}
     }
 }
 
@@ -802,15 +778,6 @@ ScoreMusic = #(define-music-function
     \score {
         \unfoldRepeats \ScoreMusic 4
 
-        \midi   {
-            \context {
-                \Staff
-                \remove "Staff_performer"
-            }
-            \context {
-                \Voice
-                \consists "Staff_performer"
-            }
-        }
+        \midi {}
     }
 }
