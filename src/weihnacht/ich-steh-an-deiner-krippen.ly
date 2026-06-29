@@ -41,6 +41,8 @@ global = {
 "bass Ich steh" = \relative d {
     d4 | d a' d, d | e c f
     a  | d c  bf bf | a2 a4
+    % do | do so do do | re te me
+    % so | do te le le | so so
 }
 
 
