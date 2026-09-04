@@ -394,5 +394,29 @@ solo = \relative g' {
         let it be, let it be,
         whisper words of wisdom,
         let it be.
+        .
+        .
+        3. And when the night is cloudy            -- mezzo piano
+        there is still a light that shines on me,
+        shine until tomorrow,
+        let it be.
+        .
+        I wake up to the sound of music
+        mother Mary comes to me,
+        speaking words of wisdom,
+        let it be.
+        .
+        .
+        Let it be, let it be,                       -- 2x
+        let it be, let it be,
+        there will be an answer,
+        let it be.
+        .
+        Let it be, let it be,
+        let it be, let it be,
+        whisper words of wisdom,
+        let it be.
+        .
+        Zwischenspiel als Abschluss.
         "
 }

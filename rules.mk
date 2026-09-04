@@ -23,3 +23,13 @@
 	timidity $< -Ow -o - \
 	| \
 	ffmpeg -i - -acodec libmp3lame -ab 64k $@
+
+
+
+
+
+%.tex.pdf: %.tex
+	cp $< $(texbuilddir);     \
+	(cd $(texbuilddir); pdflatex $<); \
+	echo `basename $@ .tex.pdf`; \
+	cp $(texbuilddir)/`basename $@ .tex.pdf`.pdf $@
