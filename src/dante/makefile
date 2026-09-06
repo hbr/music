@@ -1,3 +1,5 @@
+texbuilddir = ../../_build/tex
+
 include ../../rules.mk
 
 
