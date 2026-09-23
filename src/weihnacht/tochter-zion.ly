@@ -1,5 +1,6 @@
 \version "2.24.3"
 \language "english"
+\include "../scheme-functions.ly"
 
 global = {
   \key ef \major
@@ -7,14 +8,6 @@ global = {
   \tempo 4 = 120
 }
 
-
-\header {
-    title = "Tochter Zion"
-    composer = "Georg Friedrich Händel 1747"
-    arranger = ""
-    poet = "Friedrich Heinrich Ranke 1826"
-    tagline = #f
-}
 
 
 
@@ -45,7 +38,7 @@ global = {
 "bass Tochter Zion" = \relative {
     ef2         g4.  (f8) | ef2 g2    |
     f4. (ef8 d4)     ef4  | bf1       |
-    ef8 (f g af) g4  g    | g2 ef2    |
+    ef8 (f g af g4)  g    | g2 ef2    |
     f4  (g8 af)  bf4 bf,  | ef1       |
 }
 
@@ -87,8 +80,8 @@ global = {
 
 
 "sopran" = {
-    \"sopran Tochter Zion"
-    \"sopran Sieh, dein König"
+    \"sopran Tochter Zion" \break
+    \"sopran Sieh, dein König" \break
     \"sopran Tochter Zion"
 }
 
@@ -182,39 +175,77 @@ global = {
 
 
 
-\score {
+
+
+
+
+
+% Scores
+% ----------------------------------------------------------------------
+
+
+
+
+\midi   {
+    \context {
+        \Staff
+        \remove "Staff_performer"
+    }
+    \context {
+        \Voice
+        \consists "Staff_performer"
+    }
+}
+
+
+
+makeVoice = #(define-music-function
+    (name music instrument volume)
+    (string? ly:music? string? number?)
+    #{
+        \new Voice = $name \with {
+            midiInstrument    = $instrument
+            midiMaximumVolume = $volume
+        }
+        { $music }
+    #}
+)
+
+
+ScoreMusic = #(define-music-function
+    (select) (number?)
+    #{
     \new ChoirStaff <<
         \new Staff <<
             \global
-            \new Voice = "sopranos" {
-                \voiceOne
-                %\set midiInstrument = "organ"
-                \set midiMaximumVolume = 1.5
-                \sopran
-            }
 
-            \new Voice = "altos" {
-                \voiceTwo
-                \set midiInstrument = "flute"
-                \set midiMaximumVolume = 1.0
-                \alto
-            }
+            \makeVoice
+                "soprano"
+                {\voiceOne \sopran}
+                "violin"
+                #(voice-volume "soprano" select)
+
+            \makeVoice
+                "alto"
+                {\voiceTwo \alto}
+                "oboe"
+                #(voice-volume "alto" select)
         >>
 
         \addlyrics {
-            \set associatedVoice = "sopranos"
+            \set associatedVoice = "soprano"
             \set stanza = "1. "
             \"stanza 1"
         }
 
         \addlyrics {
-            \set associatedVoice = "sopranos"
+            \set associatedVoice = "soprano"
             \set stanza = "2. "
             \"stanza 2"
         }
 
         \addlyrics {
-            \set associatedVoice = "sopranos"
+            \set associatedVoice = "soprano"
             \set stanza = "3. "
             \"stanza 3"
         }
@@ -224,34 +255,90 @@ global = {
             \global
             \clef bass
 
-            \new Voice = "tenor" {
-                \voiceOne
-                \set midiInstrument = "tenor sax"
-                \set midiMaximumVolume = 1.0
-                \tenor
-            }
+            \makeVoice
+                "tenor"
+                {\voiceThree \tenor}
+                "tenor sax"
+                #(voice-volume "tenor" select)
 
-            \new Voice = "bass" {
-                \voiceTwo
-                \set midiInstrument = "cello"
-                \set midiMaximumVolume = 1.0
-                \bass
-            }
+            \makeVoice
+                "bass"
+                {\voiceFour \bass}
+                "cello"
+                #(voice-volume "bass" select)
         >>
     >>
+    #}
+)
 
 
 
 
-  \layout {}
-  \midi   {
-    \context {
-      \Staff
-      \remove "Staff_performer"
+\book {
+    \header {
+        title = "Tochter Zion"
+        composer = "Georg Friedrich Händel 1747"
+        arranger = ""
+        poet = "Friedrich Heinrich Ranke 1826"
+        tagline = #f
     }
-    \context {
-      \Voice
-      \consists "Staff_performer"
+
+    \score {
+        \ScoreMusic 0
+
+        \layout {}
+        \midi {}
     }
-  }
+}
+
+
+
+
+
+
+\book {
+    \bookOutputSuffix "soprano"
+    \score {
+        \ScoreMusic 1
+        \midi {}
+    }
+}
+
+
+
+
+
+
+\book {
+    \bookOutputSuffix "alto"
+    \score {
+        \ScoreMusic 2
+        \midi {}
+    }
+}
+
+
+
+
+
+
+\book {
+    \bookOutputSuffix "tenor"
+    \score {
+        \ScoreMusic 3
+        \midi {}
+    }
+}
+
+
+
+
+
+
+\book {
+    \bookOutputSuffix "bass"
+    \score {
+        \ScoreMusic 4
+        \midi {}
+    }
 }
