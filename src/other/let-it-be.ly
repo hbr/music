@@ -113,7 +113,7 @@
     c'8 c4 c16 fs, (g8) g4 g8 |
     % f'4 e8 d8     c2  % simple
     % <f' a>4   <e g>8  <d f>8   <c e>2   % like piano
-    <a f'>4   <g e'>8 <f d'>8  <e c'>2  % inverted
+    <a f'>4   <a e'>8 <a d>8  c2  % inverted
 }
 
 
@@ -121,7 +121,7 @@
     a4 a g g |
     f4 f c' c |
     c4 c b  b |
-    a4 g8 f8 e2 |
+    a4 a8 a8 c2 |
 }
 
 
@@ -177,7 +177,7 @@
 "lead vocal verse" = \relative g' {
     g16 g |
     g8 g16 a ~ 8 e8 g8. g16 c d8. |
-    d16 e   e4   d8   d    c16 c8. r8 |
+    d16 e   e4   d8   d[   c16] c8. r8 |
 
     e16 e8.  f8  e16 e ~ e16 d8. r16 e16 d d ~ |
     16 (c8.) r4 r4 r8.
